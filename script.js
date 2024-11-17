@@ -15,7 +15,7 @@ function exibirModal(conteudo) {
 
 // Função para buscar os pontos de apoio com base no CEP
 document.getElementById("cepForm").addEventListener("submit", (event) => {
-    event.preventDefault(); // Previne o reload da página.
+    event.preventDefault();
 
     // Cria a mensagem dos endereços
     const mensagem = `
@@ -27,11 +27,14 @@ document.getElementById("cepForm").addEventListener("submit", (event) => {
 
     // Exibe no modal
     exibirModal(mensagem);
+
+    // Limpa o formulário
+    event.target.reset();
 });
 
 // Função para o formulário de contato
 document.querySelector("#contato form").addEventListener("submit", (event) => {
-    event.preventDefault(); // Previne o reload da página.
+    event.preventDefault();
 
     // Coleta os valores do formulário
     const nome = document.getElementById("nome").value;
